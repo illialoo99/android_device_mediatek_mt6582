@@ -15,10 +15,10 @@
 #
 
 # inherit from the proprietary version
--include vendor/mediatek/mt6582/BoardConfigVendor.mk
+-include vendor/huawei/y5ii/BoardConfigVendor.mk
 
 # GPS
-TARGET_SPECIFIC_HEADER_PATH := device/mediatek/mt6582/include
+TARGET_SPECIFIC_HEADER_PATH := device/huawei/y5ii/include
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6582
@@ -39,7 +39,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 # Kernel
-BOARD_KERNEL_CMDLINE :=
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive # for compatability with 
+newer roms
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 
@@ -50,8 +51,8 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1468006400
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5452595200
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/mediatek/mt6582/kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/mediatek/mt6582/bootimg.mk
+TARGET_PREBUILT_KERNEL := device/huawei/y5ii/kernel
+BOARD_CUSTOM_BOOTIMG_MK := device/huawei/y5ii/bootimg.mk
 BOARD_MKBOOTIMG_ARGS := --board 1456081306
 BOARD_CUSTOM_BOOTIMG := true
 
@@ -67,7 +68,7 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
 # EGL
-BOARD_EGL_CFG := device/mediatek/mt6582/configs/egl.cfg
+BOARD_EGL_CFG := device/huawei/y5ii/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
@@ -81,7 +82,7 @@ COMMON_GLOBAL_CPPFLAGS += -DMTK_HARDWARE
 ADDITIONAL_DEFAULT_PROPERTIES += ro.mount.fs=EXT4
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/mediatek/mt6582/ril/
+BOARD_RIL_CLASS := ../../../device/huawei/y5ii/ril/
 
 BOARD_CONNECTIVITY_VENDOR := MediaTek
 BOARD_CONNECTIVITY_MODULE := conn_soc
@@ -101,10 +102,10 @@ WIFI_DRIVER_FW_PATH_P2P:=P2P
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/mediatek/mt6582/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/y5ii/bluetooth
 
 # CWM
-TARGET_RECOVERY_FSTAB := device/mediatek/mt6582/rootdir/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/huawei/y5ii/rootdir/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP
@@ -125,7 +126,7 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun%d/file"
 
 BOARD_SEPOLICY_DIRS := \
-       device/mediatek/mt6582/sepolicy
+       device/huawei/y5ii/sepolicy
 
 BOARD_SEPOLICY_UNION := \
        device.te \
@@ -133,3 +134,4 @@ BOARD_SEPOLICY_UNION := \
        system.te \
        netd.te \
        file_contexts
+�

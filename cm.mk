@@ -10,8 +10,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/mediatek/mt6582/device.mk)
-$(call inherit-product-if-exists, vendor/mediatek/mt6582/mt6582-vendor.mk)
+$(call inherit-product, device/huawei/y5ii/device.mk)
+$(call inherit-product-if-exists, vendor/huawei/y5ii/mt6582-vendor.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := mt6582
